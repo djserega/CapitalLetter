@@ -14,7 +14,11 @@ do
 {
     Console.Write("Введіть ПІБ (через пробіл): ");
 
+    Console.ForegroundColor = ConsoleColor.DarkGray;
+
     userText = Console.ReadLine();
+
+    Console.ForegroundColor = ConsoleColor.Gray;
 
     if (!string.IsNullOrEmpty(userText))
     {
@@ -24,7 +28,15 @@ do
 
         ProcessingEnteredText(prefixes, builderResult, separatedText);
 
-        Console.WriteLine(builderResult.ToString());
+
+        Console.Write($"Результат: ");
+
+        Console.ForegroundColor = ConsoleColor.DarkGray;
+
+        Console.WriteLine(builderResult);
+
+        Console.ForegroundColor = ConsoleColor.Gray;
+
         Console.WriteLine();
     }
 
@@ -39,7 +51,7 @@ static void Greeting(string[] exitWord)
     Console.ForegroundColor = ConsoleColor.DarkYellow;
     Console.WriteLine("Консольний додаток конвертує ПІБ написаний в різному регістрі в формат: Перша велика буква, наступні маленькі.");
 
-    Console.ForegroundColor = ConsoleColor.White;
+    Console.ForegroundColor = ConsoleColor.Gray;
     Console.WriteLine();
     Console.WriteLine($"Для виходу із додатку використовуйте: {string.Join(", ", exitWord)}");
 
